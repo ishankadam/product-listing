@@ -1,0 +1,116 @@
+.sidebar {
+  width: 200px;
+  margin-right: 50px;
+  padding-top: 30px;
+
+  .sectionTitle {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .priceLabel {
+    color: #888;
+    margin: -8px 0 16px 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .sidebar {
+      width: 150px !important;
+      margin-right: 50px;
+      padding-top: 30px;
+
+      .sectionTitle {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 160px !important;
+      margin-right: 50px;
+      padding-top: 30px;
+
+      .sectionTitle {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .checkboxLabel {
+    font-size: 0.875rem;
+  }
+}
+.slider {
+  color: #9c703d !important;
+  height: 5px;
+  padding: 15px 0;
+  margin: 0 auto 16px;
+  .MuiSlider-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.1);
+
+    &:focus,
+    &:hover,
+    &.Mui-active {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+
+      // Reset on touch devices, it doesn't add specificity
+      @media (hover: none) {
+        box-shadow: iOSBoxShadow;
+      }
+    }
+
+    &:before {
+      box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2),
+        0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 1px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  .MuiSlider-valueLabel {
+    font-size: 12px;
+    font-weight: normal;
+    background-color: unset;
+    color: inherit; // Inherit color from parent theme
+    top: unset; // Reset top positioning
+    bottom: -50px; // Move the value label to the bottom
+
+    &::before {
+      display: none; // Remove the arrow pointing to the thumb
+    }
+
+    & * {
+      background: transparent;
+      color: #000; // Set color for light theme
+    }
+  }
+
+  .MuiSlider-track {
+    border: none;
+    height: 5px;
+  }
+
+  .MuiSlider-rail {
+    opacity: 0.5;
+    box-shadow: inset 0px 0px 4px -2px #000;
+    background-color: #d0d0d0;
+  }
+
+  // Dark theme overrides
+  &.dark {
+    .MuiSlider-thumb {
+      background-color: #9c703d;
+    }
+
+    .MuiSlider-valueLabel {
+      color: #fff;
+    }
+
+    .MuiSlider-rail {
+      background-color: #555;
+    }
+  }
+}

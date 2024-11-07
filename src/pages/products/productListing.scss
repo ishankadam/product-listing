@@ -1,0 +1,54 @@
+// .main-container {
+//   display: flex;
+//   width: 100%;
+//   .product-container {
+//     width: 100%;
+//     .header-wrapper {
+//       display: flex;
+//       justify-content: space-between !important;
+//       align-items: center; // Ensure proper vertical alignment
+//     }
+//     .product-wrapper {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: space-between;
+//       gap: 20px; /* Space between product cards */
+//     }
+
+//     .product-wrapper > .MuiCard-root {
+//       flex: 1 1 calc(33.333% - 20px); /* Each product card takes up one-third of the row, minus the gap */
+//       max-width: calc(
+//         33.333% - 20px
+//       ); /* Prevents products from stretching too much */
+//       box-sizing: border-box;
+//     }
+//   }
+// }
+
+.main-container {
+  display: flex;
+  // width: 100%;
+
+  .product-container {
+    flex-grow: 1;
+    padding: 0 20px;
+    margin-bottom: 50px;
+
+    .product-wrapper {
+      display: grid;
+      gap: 20px;
+
+      @media (min-width: 1025px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
